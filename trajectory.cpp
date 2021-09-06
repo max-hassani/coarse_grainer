@@ -35,23 +35,17 @@ void trajectory::load_traj_from_single_dump(bool flag_vel, bool flag_force, bool
 		for(int j = 0; j < iniLine; j++){
 			getline(inputFile,temp);
 		}
-
 		inputFile >> bx[t].x_min >> bx[t].x_max ;
 		bx[t].cal_LX();
-		cout << "LX: " << bx[t].lx << endl;
 		inputFile >> bx[t].y_min >> bx[t].y_max ;
 		bx[t].cal_LY();
-		cout << "LY: " << bx[t].ly << endl;
 		inputFile >> bx[t].z_min >> bx[t].z_max ;
 		bx[t].cal_LZ();
-		cout << "LZ: " << bx[t].lz << endl;
+
 		getline(inputFile,temp);
-		cout << temp << endl;
+
 		getline(inputFile,temp);
-		cout << temp << endl;
-		cout << "bx[t].x: " << bx[t].lx << " " << bx[t].x_min << " " << bx[t].x_max << endl;
-		cout << "bx[t].y: " << bx[t].ly << " " << bx[t].y_min << " " << bx[t].y_max << endl;
-		cout << "bx[t].z: " << bx[t].lz << " " << bx[t].z_min << " " << bx[t].z_max << endl;
+
 		for(int i = 0 ; i < n_atoms; i++){
 			inputFile >> tempInd;
 
@@ -63,14 +57,6 @@ void trajectory::load_traj_from_single_dump(bool flag_vel, bool flag_force, bool
 				atoms[t][tempInd - 1].revert_norm(bx[t]);
 				atoms[t][tempInd - 1].posU = atoms[t][tempInd - 1].pos;
 				atoms[t][tempInd - 1].pos = atoms[t][tempInd - 1].apply_pbc(bx[t]);
-				if(i < 3){
-					cout << "xs: " << x << " " << y << " " << z << endl;
-					cout << "xu: " << atoms[t][tempInd - 1].posU << endl;
-					cout << "ind: " << tempInd << "\t" << atoms[t][tempInd - 1].pos << endl;
-				}
-//				if(i < 3){
-//					cout << "ind: "  << tempInd << "\t" << atoms[t][tempInd - 1].pos << endl;
-//				}
 			}
 		}
 		getline(inputFile, temp);
