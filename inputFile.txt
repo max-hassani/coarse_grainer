@@ -1,0 +1,11 @@
+t_init=750000
+t_step=50000
+num_times=984
+NRPART=192
+cut_off=4.
+dump_path=/home/muhammad/workspace/gitRepo/coarse_grainer/dump.out
+periodicity=p p p
+normalized_coordinate=yes
+proj_plane=xy
+save_3D=no
+trajectory=yes
