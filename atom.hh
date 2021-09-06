@@ -18,5 +18,5 @@ class atom{
 		~atom();
 		Vec apply_pbc(box bx);
 		Vec unwrapped(box bx);
-		Vec revert_norm(box bx);
+		void revert_norm(box bx);
 };

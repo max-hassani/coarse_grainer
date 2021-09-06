@@ -25,9 +25,8 @@ Vec atom::unwrapped(box bx){
 	r.z = pos.z + bx.lz * iz;
 	return r;
 }
-Vec atom::revert_norm(box bx){
+void atom::revert_norm(box bx){
 	pos.x = pos.x * bx.lx + bx.x_min;
 	pos.y = pos.y * bx.ly + bx.y_min;
 	pos.z = pos.z * bx.lz + bx.z_min;
-
 }
