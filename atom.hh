@@ -1,3 +1,6 @@
+#ifndef ATOM_CPP
+#define ATOM_CPP
+
 #include "p_vec_ten.hh"
 #include "box.hh"
 #include <iostream>
@@ -7,7 +10,7 @@ typedef p_vec<> Vec;
 
 class atom{
 	public:
-		Vec pos, posU, vel;
+		Vec pos, posU, vel, f;
 		int type;
 		double charge;
 		int ix,iy, iz;
@@ -20,3 +23,4 @@ class atom{
 		Vec unwrapped(box bx);
 		void revert_norm(box bx);
 };
+#endif

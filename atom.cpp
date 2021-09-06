@@ -13,9 +13,9 @@ atom::~atom(){
 }
 Vec atom::apply_pbc(box bx){
 	Vec r;
-	r.x = posU.x - ((int) floor(posU.x - bx.x_min) / bx.lx) * bx.lx;
-	r.y = posU.y - ((int) floor(posU.y - bx.y_min) / bx.ly) * bx.ly;
-	r.z = posU.z - ((int) floor(posU.z - bx.z_min) / bx.lz) * bx.lz;
+	r.x = posU.x - ((int) floor((posU.x - bx.x_min) / bx.lx)) * bx.lx;
+	r.y = posU.y - ((int) floor((posU.y - bx.y_min) / bx.ly)) * bx.ly;
+	r.z = posU.z - ((int) floor((posU.z - bx.z_min) / bx.lz)) * bx.lz;
 	return r;
 }
 Vec atom::unwrapped(box bx){
