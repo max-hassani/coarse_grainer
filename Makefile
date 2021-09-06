@@ -3,8 +3,8 @@
 CC = g++
 CFLAGS = -Wall -g 
 #-------------------------------------
-strain_map.X: trajectory.o snapshot.o box.o input.o p_vec_ten.o atom.o main.o 
-	${CC} ${CFLAGS} trajectory.o snapshot.o input.o box.o p_vec_ten.o atom.o main.o -o strain_map.X
+coarse_grainer: trajectory.o snapshot.o box.o input.o p_vec_ten.o atom.o main.o 
+	${CC} ${CFLAGS} trajectory.o snapshot.o input.o box.o p_vec_ten.o atom.o main.o -o coarse_grainer
 
 p_vec_ten.o: p_vec_ten.cc p_vec_ten.hh
 	${CC} ${CFLAGS} -c p_vec_ten.cc
