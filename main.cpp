@@ -25,6 +25,7 @@ int main(int argc, char **argv){
 	inp.read();
 	box bx;
 	snapshot config(inp.NRPART,bx);
-
+	config.set_dumpFile_path(inp.dump_path, inp.t_first);
+	config.load_dump(true, true, false, false);
 	return 0;
 }
