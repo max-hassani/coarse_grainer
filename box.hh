@@ -1,3 +1,6 @@
+#ifndef BOX_CPP
+#define BOX_CPP
+
 class box{
 public:
 	double x_min, x_max;
@@ -12,3 +15,5 @@ public:
 	void cal_LY();
 	void cal_LZ();
 };
+
+#endif
