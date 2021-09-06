@@ -102,6 +102,7 @@ void snapshot::load_dump(bool flag_wrap, bool flag_norm, bool flag_charge, bool 
 			}
 		}
 	}
+	inputFile.close();
 }
 void snapshot::set_dumpFile_path(string dump_path, int t){
   size_t spac;
